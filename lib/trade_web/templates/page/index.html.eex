@@ -34,3 +34,8 @@
     </ul>
   </div>
 </div>
+<div>
+  <%= for balance <- @balances do %>
+    <p><%= balance["asset"] %> | <%= balance["free"] %></p>
+  <% end %>
+</div>
