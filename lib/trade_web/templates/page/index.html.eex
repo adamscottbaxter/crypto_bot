@@ -34,8 +34,22 @@
     </ul>
   </div>
 </div>
-<div>
-  <%= for balance <- @balances do %>
-    <p><%= balance["asset"] %> | <%= balance["free"] %></p>
-  <% end %>
-</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Currency</th>
+      <th scope="col">Free</th>
+      <th scope="col">Locked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for balance <- @balances do %>
+    <tr>
+      <th><%= balance["asset"] %></th>
+      <td><%= balance["free"] %></td>
+      <td><%= balance["locked"] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
